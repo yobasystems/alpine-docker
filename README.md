@@ -8,10 +8,10 @@
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) with version 17.05.0 of [Docker](https://www.docker.com/)
 
-Alpine Linux with Docker preinstalled, or even better Docker-in-Docker (dind).
+Alpine Linux with Docker pre-installed, or even better Docker-in-Docker (dind).
 
-### Alpine Version 3.6.2 (Released Jun 17, 2017)
-### Docker Version 17.05.0
+##### Alpine Version 3.6.2 (Released Jun 17, 2017)
+##### Docker Version 17.05.0
 
 ----
 
@@ -50,6 +50,7 @@ Docker is an open-source project that automates the deployment of applications i
 
 ## How to use this image
 #### Usage
+
 Use like you would any other base image:
 
 ```
@@ -61,6 +62,8 @@ RUN apk add --no-cache ......
 ..
 .
 ```
+
+or maybe a docker run command:
 
 
 ```
