@@ -1,0 +1,80 @@
+stages:
+  - build
+  - deploy
+
+amd64 docker build:
+  stage: docker:dind
+  stage: build
+  tags:
+    - amd64
+  script:
+    - apk add --update git
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $DOCKER_REGISTRY
+    - cd alpine-docker/ && docker build -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:master -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:latest -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64 .
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:master
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:latest
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
+
+amd64 dind build:
+  stage: docker:dind
+  stage: build
+  tags:
+    - amd64
+  script:
+    - apk add --update git
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $DOCKER_REGISTRY
+    - cd alpine-dind/ && docker build -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:dind -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64-dind .
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:dind
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64-dind
+
+arm32v7 docker build:
+  stage: yobasystems/alpine-dind:armhf
+  stage: build
+  tags:
+    - armhf
+  script:
+    - apk add --update git
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $DOCKER_REGISTRY
+    - cd alpine-docker-armhf/ && docker build -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7 -t $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7 -t $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7 -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:armhf -t $DOCKER_REGISTRY_DOCKERHUB_REPO:armhf -t $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf .
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:armhf
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker push $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker push $DOCKER_REGISTRY_DOCKERHUB_REPO:armhf
+    - docker login quay.io -u $QUAY_USERNAME -p $QUAY_PASSWORD && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7
+    - docker login quay.io -u $QUAY_USERNAME -p $QUAY_PASSWORD && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf
+
+arm32v7 dind build:
+  stage: yobasystems/alpine-dind:armhf
+  stage: build
+  tags:
+    - armhf
+  script:
+    - apk add --update git
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $DOCKER_REGISTRY
+    - cd alpine-dind-armhf/ && docker build -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7-dind -t $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7-dind -t $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7-dind -t $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:armhf-dind -t $DOCKER_REGISTRY_DOCKERHUB_REPO:armhf-dind -t $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf-dind .
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7-dind
+    - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:armhf-dind
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker push $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7-dind
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker push $DOCKER_REGISTRY_DOCKERHUB_REPO:armhf-dind
+    - docker login quay.io -u $QUAY_USERNAME -p $QUAY_PASSWORD && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7-dind
+    - docker login quay.io -u $QUAY_USERNAME -p $QUAY_PASSWORD && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf-dind
+
+Github Mirror:
+  stage: deploy
+  tags:
+    - deploy
+  script:
+    - git push --mirror https://$GITHUB_USERNAME:$GITHUB_PASSWORD@$GITHUB_REPO
+    - git push https://$GITHUB_USERNAME:$GITHUB_PASSWORD@$GITHUB_REPO HEAD:master
+
+Bitbucket Mirror:
+  stage: deploy
+  tags:
+    - deploy
+  script:
+    - mkdir -p ~/.ssh
+    - echo "$BB_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H 'bitbucket.org' >> ~/.ssh/known_hosts
+    - git push --mirror git@$BITBUCKET_REPO
+    - git push git@$BITBUCKET_REPO HEAD:master
