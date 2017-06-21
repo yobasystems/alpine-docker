@@ -3,7 +3,7 @@ stages:
   - deploy
 
 amd64 docker build:
-  stage: docker:dind
+  stage: yobasystems/alpine-docker:dind
   stage: build
   tags:
     - amd64
@@ -16,7 +16,7 @@ amd64 docker build:
     - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
 
 amd64 dind build:
-  stage: docker:dind
+  stage: yobasystems/alpine-docker:dind
   stage: build
   tags:
     - amd64
@@ -28,7 +28,7 @@ amd64 dind build:
     - docker push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64-dind
 
 arm32v7 docker build:
-  stage: yobasystems/alpine-dind:armhf
+  stage: yobasystems/alpine-docker:armhf-dind
   stage: build
   tags:
     - armhf
@@ -44,7 +44,7 @@ arm32v7 docker build:
     - docker login quay.io -u $QUAY_USERNAME -p $QUAY_PASSWORD && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf
 
 arm32v7 dind build:
-  stage: yobasystems/alpine-dind:armhf
+  stage: yobasystems/alpine-docker:armhf-dind
   stage: build
   tags:
     - armhf
