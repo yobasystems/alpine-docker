@@ -32,21 +32,21 @@ Docker is an open-source project that automates the deployment of applications i
 
 ## Architectures
 
-```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
-```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
-```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
-```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
+  * ```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
+  * ```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
+  * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
+  * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
-#### PLEASE CHECK TAGS FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+#### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## Tags
 
-  * ```:latest``` latest
+  * ```:latest```, ```:amd64``` latest branch based on amd64
   * ```:master``` master branch usually inline with latest
   * ```:dind``` latest branch with docker-in-docker
   * ```:v0.0.0``` version number related to docker version
-  * ```:armhf``` Armv7 based on latest tag but arm architecture
-  * ```:armhf-dind``` Armv7 based on latest tag but arm architecture and includes Git
+  * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
+  * ```:armhf-dind```, ```:arm32v7-dind``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
 
 ## How to use this image
 #### Usage
