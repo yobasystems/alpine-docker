@@ -68,6 +68,40 @@ or maybe a docker run command:
 docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.sock yobasystems/alpine-docker:amd64-dind /bin/sh
 ```
 
+## Image contents & Vulnerability analysis
+
+| PACKAGE NAME          | PACKAGE VERSION | VULNERABILITIES |
+|-----------------------|-----------------|-----------------|
+| apk-tools             | 2.7.1-r1        | None Detected   |
+| busybox               | 1.26.2-r5       | None Detected   |
+| expat                 | 2.2.0-r0        | None Detected   |
+| curl                  | 7.54.0-r0       | None Detected   |
+| docker                | 17.05.0-r0      | None Detected   |
+| musl                  | 1.1.16-r9       | None Detected   |
+| libssl1.0             | 1.0.2k-r0       | None Detected   |
+| openssh-client        | 7.5_p1-r1       | None Detected   |
+| libseccomp            | 2.3.2-r0        | None Detected   |
+| ca-certificates       | 20161130-r2     | None Detected   |
+| alpine-keys           | 2.1-r1          | None Detected   |
+| alpine-baselayout     | 3.0.4-r0        | None Detected   |
+| libressl2.5-libssl    | 2.5.4-r0        | None Detected   |
+| libcrypto1.0          | 1.0.2k-r0       | None Detected   |
+| pcre                  | 8.40-r2         | None Detected   |
+| libnftnl-libs         | 1.0.7-r0        | None Detected   |
+| libmnl                | 1.0.4-r0        | None Detected   |
+| openssl               | 1.0.2k-r0       | None Detected   |
+| git                   | 2.13.0-r0       | None Detected   |
+| libssh2               | 1.8.0-r1        | None Detected   |
+| libcurl               | 7.54.0-r0       | None Detected   |
+| iptables              | 1.6.1-r0        | None Detected   |
+| libressl2.5-libcrypto | 2.5.4-r0        | None Detected   |
+| libc-utils            | 0.7.1-r0        | None Detected   |
+| musl-utils            | 1.1.16-r9       | None Detected   |
+| zlib                  | 1.2.11-r0       | None Detected   |
+| device-mapper-libs    | 2.02.168-r3     | None Detected   |
+| scanelf               | 1.2.2-r0        | None Detected   |
+| openssh-keygen        | 7.5_p1-r1       | None Detected   |
+
 
 ## Source Repository
 
