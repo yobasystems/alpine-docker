@@ -2,14 +2,14 @@
 
 [![Docker Layers](https://img.shields.io/badge/docker%20layers-4-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Size](https://img.shields.io/badge/docker%20size-40%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Nginx Version](https://img.shields.io/badge/docker%20version-v18.03.1-green.svg?maxAge=2592000?style=flat-square)](http://nginx.org/en/)
+[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Nginx Version](https://img.shields.io/badge/docker%20version-v18.06.1-green.svg?maxAge=2592000?style=flat-square)](http://nginx.org/en/)
 
 
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
 ##### Alpine Version 3.8.1 (Released September 11, 2018)
-##### Docker Version 18.03.1
+##### Docker Version 18.06.1
 
 ----
 
@@ -19,7 +19,7 @@ Alpine Linux is a Linux distribution built around musl libc and BusyBox. The ima
 ## What is Docker in Docker?
 Although running Docker inside Docker is generally not recommended, there are some legitimate use cases, such as development of Docker itself.
 
-Docker is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualization on Linux, Mac OS and Windows.
+Docker is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualisation on Linux, Mac OS and Windows.
 
 
 ## Features
