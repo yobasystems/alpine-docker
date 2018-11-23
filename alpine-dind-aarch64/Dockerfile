@@ -1,5 +1,5 @@
-FROM yobasystems/alpine-docker:x86
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="i886/x86" alpineversion="3.8.1" build="23-nov-2018"
+FROM yobasystems/alpine-docker:aarch64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM64v8/aarch64"  alpineversion="3.8.1" build="23-nov-2018"
 
 RUN apk add --no-cache btrfs-progs e2fsprogs e2fsprogs-extra iptables xfsprogs xz
 
