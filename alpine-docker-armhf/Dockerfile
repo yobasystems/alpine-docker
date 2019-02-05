@@ -1,5 +1,5 @@
 FROM yobasystems/alpine:3.8.2-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf"  alpineversion="3.8.2" build="05-feb-2019"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf"  alpineversion="3.8.2" build="05-Feb-2019"
 
 RUN apk add --no-cache ca-certificates curl openssl git openssh-client docker
 

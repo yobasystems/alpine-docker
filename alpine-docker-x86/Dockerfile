@@ -1,5 +1,5 @@
 FROM yobasystems/alpine:3.8.2-x86
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="i886/x86" alpineversion="3.8.2" build="05-feb-2019"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="i886/x86" alpineversion="3.8.2" build="05-Feb-2019"
 
 RUN apk add --no-cache ca-certificates curl openssl git openssh-client docker
 
