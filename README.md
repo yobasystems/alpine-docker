@@ -2,13 +2,13 @@
 
 [![Docker Layers](https://img.shields.io/badge/docker%20layers-4-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Size](https://img.shields.io/badge/docker%20size-40%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Nginx Version](https://img.shields.io/badge/docker%20version-v18.06.1-green.svg?maxAge=2592000?style=flat-square)](http://nginx.org/en/)
+[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.2-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Nginx Version](https://img.shields.io/badge/docker%20version-v18.06.1-green.svg?maxAge=2592000?style=flat-square)](http://nginx.org/en/)
 
 
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-##### Alpine Version 3.8.1 (Released September 11, 2018)
+##### Alpine Version 3.8.2 (Released December 20, 2018)
 ##### Docker Version 18.06.1
 
 ----
@@ -42,9 +42,10 @@ Docker is an open-source project that automates the deployment of applications i
   * ```:latest```, ```:amd64``` latest branch based on amd64
   * ```:master``` master branch usually inline with latest
   * ```:dind``` latest branch with docker-in-docker
-  * ```:v0.0.0``` version number related to docker version
   * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
   * ```:armhf-dind```, ```:arm32v7-dind``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
+  * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
+  * ```:aarch64-dind```, ```:arm64v8-dind``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
 
 ## How to use this image
 #### Usage

@@ -1,5 +1,5 @@
-FROM yobasystems/alpine:3.8.1-aarch64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM64v8/aarch64"  alpineversion="3.8.1" build="23-nov-2018"
+FROM yobasystems/alpine:3.8.2-aarch64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM64v8/aarch64"  alpineversion="3.8.2" build="05-feb-2019"
 
 RUN apk add --no-cache ca-certificates curl openssl git openssh-client docker
 
