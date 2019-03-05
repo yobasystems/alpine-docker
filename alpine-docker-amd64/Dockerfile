@@ -1,10 +1,10 @@
-FROM yobasystems/alpine:3.9.0-armhf
+FROM yobasystems/alpine:3.9.0-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
-    architecture="arm32v7/armhf" \
+    architecture="amd64/x86_64" \
     alpine-version="3.9.0" \
     docker-version="18.09.1" \
     build="05-Mar-2019" \

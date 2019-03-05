@@ -1,12 +1,14 @@
 # Alpine with Docker
 
-[![Docker Layers](https://img.shields.io/badge/docker%20layers-4-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Size](https://img.shields.io/badge/docker%20size-40%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-docker/)
+[![Docker Automated build](https://img.shields.io/docker/automated/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
+[![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.9.0-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Docker Version](https://img.shields.io/badge/docker%20version-v18.06.1-green.svg?maxAge=2592000?style=flat-square)](https://www.docker.com/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.9.0-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Docker Version](https://img.shields.io/badge/Nginx%20version-v18.09.1-green.svg?style=for-the-badge)](https://www.docker.com/)
 
 
-
-This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
+This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
 ##### Alpine Version 3.9.0 (Released Jan 29, 2019)
 ##### Docker Version 18.09.1
@@ -25,27 +27,42 @@ Docker is an open-source project that automates the deployment of applications i
 ## Features
 
   * Minimal size only
-    * 40 MB and only 4 layers
+  * 40 MB and only 4 layers
   * Memory usage is minimal on a simple install
 
 ## Architectures
 
-  * ```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
-  * ```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
-  * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
-  * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
+* ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
+* ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
+* ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
 #### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## Tags
 
-  * ```:latest```, ```:amd64``` latest branch based on amd64
-  * ```:master``` master branch usually inline with latest
-  * ```:dind``` latest branch with docker-in-docker
-  * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
-  * ```:armhf-dind```, ```:arm32v7-dind``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
-  * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
-  * ```:aarch64-dind```, ```:arm64v8-dind``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
+* ```:latest``` latest branch based (Automatic Architecture Selection)
+* ```:master``` master branch usually inline with latest
+* ```:dind``` latest branch with docker-in-docker
+* ```:amd64```, ```:x86_64``` amd64 based on latest tag but amd64 architecture
+* ```:amd64-dind```, ```:x86_64-dind``` amd64 based on latest tag but amd64 architecture and includes docker-in-docker
+* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
+* ```:armhf-dind```, ```:arm32v7-dind``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
+* ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
+* ```:aarch64-dind```, ```:arm64v8-dind``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
+
+## Layers & Sizes
+
+![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
 
 ## How to use this image
 #### Usage

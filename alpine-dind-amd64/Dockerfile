@@ -1,10 +1,10 @@
-FROM yobasystems/alpine:3.9.0-armhf
+FROM yobasystems/alpine-docker:amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
-    architecture="arm32v7/armhf" \
+    architecture="amd64/x86_64" \
     alpine-version="3.9.0" \
     docker-version="18.09.1" \
     build="05-Mar-2019" \
@@ -18,11 +18,25 @@ LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 
-RUN apk add --no-cache ca-certificates curl openssl git openssh-client docker
+RUN apk add --no-cache btrfs-progs e2fsprogs e2fsprogs-extra iptables xfsprogs xz
 
-COPY files/docker-entrypoint.sh /usr/local/bin/
+RUN set -x \
+	&& addgroup -S dockremap \
+	&& adduser -S -G dockremap dockremap \
+	&& echo 'dockremap:165536:65536' >> /etc/subuid \
+	&& echo 'dockremap:165536:65536' >> /etc/subgid
 
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENV DIND_COMMIT 3b5fac462d21ca164b3778647420016315289034
 
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["sh"]
+RUN wget "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind" -O /usr/local/bin/dind \
+	&& chmod +x /usr/local/bin/dind
+
+COPY files/dockerd-entrypoint.sh /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh
+
+VOLUME /var/lib/docker
+EXPOSE 2375
+
+ENTRYPOINT ["/usr/local/bin/dockerd-entrypoint.sh"]
+CMD []
