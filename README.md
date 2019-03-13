@@ -4,13 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.9.0-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.9.2-green.svg?style=for-the-badge)](https://alpinelinux.org/)
 [![Docker Version](https://img.shields.io/badge/Docker%20version-v18.09.1-green.svg?style=for-the-badge)](https://www.docker.com/)
 
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-##### Alpine Version 3.9.0 (Released Jan 29, 2019)
+##### Alpine Version 3.9.2 (Released March 04, 2019)
 ##### Docker Version 18.09.1
 
 ----
@@ -26,9 +26,9 @@ Docker is an open-source project that automates the deployment of applications i
 
 ## Features
 
-  * Minimal size only
-  * 40 MB and only 4 layers
-  * Memory usage is minimal on a simple install
+* Minimal size only
+* 40 MB and only 4 layers
+* Memory usage is minimal on a simple install
 
 ## Architectures
 

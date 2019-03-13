@@ -1,5 +1,6 @@
 stages:
   - build
+  - build2
   - test
   - manifest
   - deploy
@@ -27,7 +28,7 @@ amd64 docker build:
 
 amd64 dind build:
   stage: yobasystems/alpine-docker:dind
-  stage: build
+  stage: build2
   tags:
     - amd64
   variables:
@@ -69,7 +70,7 @@ arm32v7 docker build:
 
 arm32v7 dind build:
   stage: yobasystems/alpine-docker:armhf-dind
-  stage: build
+  stage: build2
   tags:
     - armhf
   variables:
@@ -111,7 +112,7 @@ arm64v8 docker build:
 
 arm64v8 dind build:
   stage: yobasystems/alpine-docker:aarch64-dind
-  stage: build
+  stage: build2
   tags:
     - aarch64
   variables:
