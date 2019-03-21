@@ -44,11 +44,11 @@ Docker is an open-source project that automates the deployment of applications i
 * ```:master``` master branch usually inline with latest
 * ```:dind``` latest branch with docker-in-docker
 * ```:amd64```, ```:x86_64``` amd64 based on latest tag but amd64 architecture
-* ```:amd64-dind```, ```:x86_64-dind``` amd64 based on latest tag but amd64 architecture and includes docker-in-docker
+* ```:dind-amd64```, ```:dind-x86_64``` amd64 based on latest tag but amd64 architecture and includes docker-in-docker
 * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
-* ```:armhf-dind```, ```:arm32v7-dind``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
+* ```:dind-armhf```, ```:dind-arm32v7``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
 * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
-* ```:aarch64-dind```, ```:arm64v8-dind``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
+* ```:dind-aarch64```, ```:dind-arm64v8``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
 
 ## Layers & Sizes
 
@@ -70,7 +70,7 @@ Docker is an open-source project that automates the deployment of applications i
 Use like you would any other base image:
 
 ```
-FROM yobasystems/alpine-docker:amd64
+FROM yobasystems/alpine-docker
 RUN apk add --no-cache ......
 .........
 .......
@@ -83,7 +83,7 @@ or maybe a docker run command:
 
 
 ```
-docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.sock yobasystems/alpine-docker:amd64-dind /bin/sh
+docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.sock yobasystems/alpine-docker:dind /bin/sh
 ```
 
 ## Image contents & Vulnerability analysis
