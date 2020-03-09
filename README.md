@@ -4,13 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.11.2-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.11.3-green.svg?style=for-the-badge)](https://alpinelinux.org/)
 [![Docker Version](https://img.shields.io/badge/Docker%20version-v19.03.5-green.svg?style=for-the-badge)](https://www.docker.com/)
 
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-##### Alpine Version 3.11.2 (Released December 24, 2019)
+##### Alpine Version 3.11.3 (Released Jan 16, 2020)
 ##### Docker Version 19.03.5
 
 ----
@@ -115,4 +115,3 @@ STELLAR: GAREZZW36KF2IT2EJW6LG5HH4XT3QIMWCHMCGEBC6V3AP3EFJCORRZIY
 XRP: rsaEp3bh3LrjVHqrcyLgbUb6QUQbBogzR3
 ZCASH: t1MuAY2vR17vDK3BgCAtf8ZdXsCiBw3zkU6
 ```
-
