@@ -5,14 +5,14 @@ ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="arm64v8/aarch64" \
-    alpine-version="3.11.6" \
-    docker-version="19.03.5" \
-    build="08-May-2020" \
+    alpine-version="3.12.0" \
+    docker-version="19.03.11" \
+    build="16-Jul-2020" \
     org.opencontainers.image.title="alpine-docker" \
     org.opencontainers.image.description="Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.11.6" \
+    org.opencontainers.image.version="v3.12.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-docker/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-docker" \
     org.opencontainers.image.revision=$VCS_REF \
