@@ -94,18 +94,18 @@ docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.
 
 ## Source Repositories
 
-* [Github - yobasystems/alpine](https://github.com/yobasystems/alpine-docker)
+* [Github - yobasystems/alpine-docker](https://github.com/yobasystems/alpine-docker)
 
-* [Gitlab - yobasystems/alpine](https://gitlab.com/yobasystems/alpine-docker)
+* [Gitlab - yobasystems/alpine-docker](https://gitlab.com/yobasystems/alpine-docker)
 
-* [Bitbucket - yobasystems/alpine](https://bitbucket.org/yobasystems/alpine-docker/)
+* [Bitbucket - yobasystems/alpine-docker](https://bitbucket.org/yobasystems/alpine-docker/)
 
 
 ## Container Registries
 
-* [Dockerhub - yobasystems/alpine](https://hub.docker.com/r/yobasystems/alpine-docker/)
+* [Dockerhub - yobasystems/alpine-docker](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-* [Quay.io - yobasystems/alpine](https://quay.io/repository/yobasystems/alpine-docker)
+* [Quay.io - yobasystems/alpine-docker](https://quay.io/repository/yobasystems/alpine-docker)
 
 
 ## Links
