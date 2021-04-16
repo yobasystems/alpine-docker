@@ -4,14 +4,14 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.12.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
-[![Docker Version](https://img.shields.io/badge/Docker%20version-v19.03.12-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.13.5-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Docker Version](https://img.shields.io/badge/Docker%20version-v20.10.3-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-##### Alpine Version 3.12.0 (Released May 29, 2020)
-##### Docker Version 19.03.12
+##### Alpine Version 3.13.5 (Released 2021-04-14)
+##### Docker Version 20.10.3
 
 ----
 
