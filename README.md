@@ -10,7 +10,7 @@
 
 This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-### Alpine Version 3.16.2 (Released 2022-07-18)
+### Alpine Version 3.16.2 (Released 2022-08-09)
 ##### Docker Version 20.10.16
 
 ----
