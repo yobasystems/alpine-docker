@@ -1,18 +1,18 @@
-FROM yobasystems/alpine:3.16.2-armhf
+FROM yobasystems/alpine:3.17.0-armhf
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="arm32v7/armhf" \
-    alpine-version="3.16.2" \
-    docker-version="20.10.16" \
-    build="21-Aug-2022" \
+    alpine-version="3.17.0" \
+    docker-version="20.10.21" \
+    build="06-Dec-2022" \
     org.opencontainers.image.title="alpine-docker" \
     org.opencontainers.image.description="Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.16.2" \
+    org.opencontainers.image.version="v3.17.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-docker/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-docker" \
     org.opencontainers.image.revision=$VCS_REF \
