@@ -15,29 +15,46 @@ This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasys
 
 ----
 
-## What is Alpine Linux?
+## Table of Contents
+
+- [Alpine with Docker](#alpine-with-docker)
+- [What is Alpine Linux?](#what-is-alpine-linux)
+- [What is Docker in Docker?](#what-is-docker-in-docker)
+- [Features](#features)
+- [Architectures](#architectures)
+- [Tags](#tags)
+- [Layers & Sizes](#layers--sizes)
+- [How to use this image](#how-to-use-this-image)
+- [Image contents & Vulnerability analysis](#image-contents--vulnerability-analysis)
+- [Source Repositories](#source-repositories)
+- [Container Registries](#container-registries)
+- [Links](#links)
+- [Donation](#donation)
+
+
+## 🏔️ What is Alpine Linux?
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
 
-## What is Docker in Docker?
+## 🐳 What is Docker in Docker?
 Although running Docker inside Docker is generally not recommended, there are some legitimate use cases, such as development of Docker itself.
 
 Docker is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualisation on Linux, Mac OS and Windows.
 
 
-## Features
+## ✨ Features
 
 * Minimal size only, minimal layers
 * Memory usage is minimal on a simple install.
 
-## Architectures
+## 🏗️ Architectures
 
 * ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
 * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
 * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
-#### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+#### 📝 PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
-## Tags
+## 🏷️ Tags
 
 * ```:latest``` latest branch based (Automatic Architecture Selection)
 * ```:master``` master branch usually inline with latest
@@ -49,7 +66,7 @@ Docker is an open-source project that automates the deployment of applications i
 * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
 * ```:dind-aarch64```, ```:dind-arm64v8``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
 
-## Layers & Sizes
+## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
 ![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
@@ -63,7 +80,7 @@ Docker is an open-source project that automates the deployment of applications i
 ![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
 ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
 
-## How to use this image
+## 🚀 How to use this image
 #### Usage
 
 Use like you would any other base image:
@@ -85,13 +102,29 @@ or maybe a docker run command:
 docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.sock yobasystems/alpine-docker:dind /bin/sh
 ```
 
-## Image contents & Vulnerability analysis
+or if you want to use a docker-compose.yml:
+
+```
+version: '3.9'
+
+services:
+  alpine-docker:
+    image: yobasystems/alpine-docker:dind
+    container_name: alpine-docker
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+
+Simply create a docker-compose.yml file with the above content and run docker-compose up -d to start the container.
+
+## 🔍 Image contents & Vulnerability analysis
 
 | PACKAGE NAME          | PACKAGE VERSION | VULNERABILITIES |
 |-----------------------|-----------------|-----------------|
 
 
-## Source Repositories
+## 📚 Source Repositories
 
 * [Github - yobasystems/alpine-docker](https://github.com/yobasystems/alpine-docker)
 
@@ -100,14 +133,14 @@ docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.
 * [Bitbucket - yobasystems/alpine-docker](https://bitbucket.org/yobasystems/alpine-docker/)
 
 
-## Container Registries
+## 🐳 Container Registries
 
 * [Dockerhub - yobasystems/alpine-docker](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
 * [Quay.io - yobasystems/alpine-docker](https://quay.io/repository/yobasystems/alpine-docker)
 
 
-## Links
+## 🔗 Links
 
 * [Yoba Systems](https://www.yobasystems.co.uk/)
 
@@ -119,7 +152,7 @@ docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.
 
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
-## Donation
+## 💰 Donation
 
 [![BMAC](https://img.shields.io/badge/BUY%20ME%20A%20COFFEE-£5-blue.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dominictayloruk?new=1)
 
