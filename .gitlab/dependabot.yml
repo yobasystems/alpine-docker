@@ -1,6 +1,26 @@
 version: 2
 updates:
   - package-ecosystem: docker
-    directory: /
+    directory: /alpine-docker-amd64/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-docker-armhf/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-docker-aarch64/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-dind-amd64/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-dind-armhf/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-dind-aarch64/
     schedule:
       interval: weekly
