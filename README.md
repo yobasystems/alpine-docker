@@ -8,7 +8,7 @@
 [![Docker Version](https://img.shields.io/badge/Docker%20version-v25.0.3-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 
 
-This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
+This Container image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
 ### Alpine Version 3.19.1 (Released 2023-01-26)
 ##### Docker Version 25.0.3
@@ -33,7 +33,7 @@ This Docker image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasys
 
 
 ## 🏔️ What is Alpine Linux?
-Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
+Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
 
 ## 🐳 What is Docker in Docker?
 Although running Docker inside Docker is generally not recommended, there are some legitimate use cases, such as development of Docker itself.
