@@ -76,6 +76,7 @@ arm64v8 docker build:
 
 sast:
   stage: test
+
 .deploy_template: &deploy_definition
   image: yobasystems/alpine-docker:dind
   stage: deploy
@@ -256,8 +257,6 @@ arm64v8 docker dind build:
     ARCH: aarch64
     PLATFORM: arm64/v8
 
-sast:
-  stage: test
 .deploy_template_dind: &deploy_definition_dind
   image: yobasystems/alpine-docker:dind
   stage: deploy
