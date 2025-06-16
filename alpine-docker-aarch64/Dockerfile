@@ -1,21 +1,21 @@
-FROM yobasystems/alpine:3.21.3-aarch64
+FROM yobasystems/alpine:3.22.0-aarch64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm64v8/aarch64" \
-    alpine-version="3.21.3" \
-    docker-version="27.3.1" \
-    build="24-Mar-2025" \
+    alpine-version="3.22.0" \
+    docker-version="28.2.2" \
+    build="16-Jun-2025" \
     org.opencontainers.image.title="alpine-docker" \
     org.opencontainers.image.description="Container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="3.21.3" \
+    org.opencontainers.image.version="3.22.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-docker/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-docker" \
-    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.21.3" \
+    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.22.0" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 

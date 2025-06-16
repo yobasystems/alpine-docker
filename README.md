@@ -4,14 +4,14 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-docker.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-docker/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.21.3-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
-[![Docker Version](https://img.shields.io/badge/Docker%20version-v27.3.1-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Docker Version](https://img.shields.io/badge/Docker%20version-v28.2.2-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 
 
 This Container image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
-### Alpine Version 3.21.3 (Released 2025-02-13)
-##### Docker Version 27.3.1
+### Alpine Version 3.22.0 (Released 2025-05-30)
+##### Docker Version 28.2.2
 
 ----
 
@@ -69,16 +69,16 @@ Docker is an open-source project that automates the deployment of applications i
 ## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
+![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/amd64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
+![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/aarch64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
+![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
 
 ## 🚀 How to use this image
 #### Usage
@@ -146,11 +146,3 @@ Simply create a docker-compose.yml file with the above content and run docker-co
 * [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
 * [GHCR - Yoba Systems](https://ghcr.io/yobasystems)
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
-
-## 💰 Donation
-
-[![BMAC](https://img.shields.io/badge/BUY%20ME%20A%20COFFEE-£5-blue.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dominictayloruk?new=1)
-
-[![BITCOIN](https://img.shields.io/badge/BTC-bc1q7hy8qmyvq7rw6slrna7yffcdnj9rcg4e9xjecc-blue.svg?style=for-the-badge&logo=bitcoin)](bitcoin:bc1q7hy8qmyvq7rw6slrna7yffcdnj9rcg4e9xjecc)
-
-[![ETHEREUM](https://img.shields.io/badge/ETH-0xb6bE2e4da3d86b50Bdae1F9B6960c23dd87C532C-blue.svg?style=for-the-badge&logo=ethereum)](ethereum:0xb6bE2e4da3d86b50Bdae1F9B6960c23dd87C532C)
