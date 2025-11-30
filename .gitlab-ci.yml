@@ -10,14 +10,20 @@ include:
   - template: Jobs/SAST.gitlab-ci.yml
 
 container_scanning_amd64:
+  tags:
+    - amd64
   variables:
     CS_DOCKERFILE_PATH: "alpine-docker-amd64/Dockerfile"
 
 container_scanning_armhf:
+  tags:
+    - aarch64 # Use aarch64 runner as there isnt an image for armhf
   variables:
     CS_DOCKERFILE_PATH: "alpine-docker-armhf/Dockerfile"
 
 container_scanning_aarch64:
+  tags:
+    - aarch64
   variables:
     CS_DOCKERFILE_PATH: "alpine-docker-aarch64/Dockerfile"
 
