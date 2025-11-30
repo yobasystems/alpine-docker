@@ -1,13 +1,25 @@
 stages:
-- build
-- test
-- deploy
-- manifest
+  - build
+  - test
+  - deploy
+  - manifest
 
 include:
-- remote: https://gitlab.com/yobasystems/gitlab-ci-templates/raw/master/container_scanning_all_arch.yml
-- template: Security/Secret-Detection.gitlab-ci.yml
-- template: Security/SAST.gitlab-ci.yml
+  - remote: https://gitlab.com/yobasystems/gitlab-ci-templates/raw/master/container_scanning_all_arch.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+  - template: Jobs/SAST.gitlab-ci.yml
+
+container_scanning_amd64:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-docker-amd64/Dockerfile"
+
+container_scanning_armhf:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-docker-armhf/Dockerfile"
+
+container_scanning_aarch64:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-docker-aarch64/Dockerfile"
 
 .build_template: &build_definition
   image: yobasystems/alpine-docker:dind
@@ -43,7 +55,7 @@ include:
     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token "$CI_REGISTRY" --password-stdin
     - docker push ${CI_REGISTRY_IMAGE}/${CI_COMMIT_SHORT_SHA}:${ARCH}-dind
 
-amd64 docker build:
+amd64_docker_build:
   <<: *build_definition
   tags:
     - amd64
@@ -51,7 +63,7 @@ amd64 docker build:
     ARCH: amd64
     PLATFORM: amd64
 
-arm32v7 docker build:
+arm32v7_docker_build:
   <<: *build_definition
   tags:
     - armhf
@@ -59,16 +71,13 @@ arm32v7 docker build:
     ARCH: armhf
     PLATFORM: arm/v7
 
-arm64v8 docker build:
+arm64v8_docker_build:
   <<: *build_definition
   tags:
     - aarch64
   variables:
     ARCH: aarch64
     PLATFORM: arm64/v8
-
-sast:
-  stage: test
 
 .deploy_template: &deploy_definition
   image: yobasystems/alpine-docker:dind
@@ -118,7 +127,7 @@ sast:
         docker push ghcr.io/$DOCKER_REGISTRY_GHCR_REPO:${CI_COMMIT_TAG}-${ARCH2}
       fi
 
-amd64 docker deploy:
+amd64_docker_deploy:
   <<: *deploy_definition
   tags:
     - amd64
@@ -127,9 +136,9 @@ amd64 docker deploy:
     ARCH2: x86_64
     PLATFORM: amd64
   needs:
-    - amd64 docker build
+    - amd64_docker_build
 
-arm32v7 docker deploy:
+arm32v7_docker_deploy:
   <<: *deploy_definition
   tags:
     - armhf
@@ -138,9 +147,9 @@ arm32v7 docker deploy:
     ARCH2: arm32v7
     PLATFORM: arm/v7
   needs:
-    - arm32v7 docker build
+    - arm32v7_docker_build
 
-arm64v8 docker deploy:
+arm64v8_docker_deploy:
   <<: *deploy_definition
   tags:
     - aarch64
@@ -149,15 +158,15 @@ arm64v8 docker deploy:
     ARCH2: arm64v8
     PLATFORM: arm64/v8
   needs:
-    - arm64v8 docker build
+    - arm64v8_docker_build
 
-manifest creation latest:
+manifest_creation_latest:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - amd64 docker deploy
-    - arm32v7 docker deploy
-    - arm64v8 docker deploy
+    - amd64_docker_deploy
+    - arm32v7_docker_deploy
+    - arm64v8_docker_deploy
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -186,11 +195,11 @@ manifest creation latest:
         create_and_push_manifest $repo latest
       done
 
-manifest creation version:
+manifest_creation_versioned:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - manifest creation latest
+    - manifest_creation_latest
   rules:
     - if: $CI_COMMIT_TAG
   script:
@@ -226,7 +235,7 @@ manifest creation version:
         create_and_push_manifest $repo $MAJOR.$MINOR.$PATCH
       done
 
-amd64 docker dind build:
+amd64_docker_dind_build:
   <<: *build_definition_dind
   tags:
     - amd64
@@ -234,7 +243,7 @@ amd64 docker dind build:
     ARCH: amd64
     PLATFORM: amd64
 
-arm32v7 docker dind build:
+arm32v7_docker_dind_build:
   <<: *build_definition_dind
   tags:
     - armhf
@@ -242,7 +251,7 @@ arm32v7 docker dind build:
     ARCH: armhf
     PLATFORM: arm/v7
 
-arm64v8 docker dind build:
+arm64v8_docker_dind_build:
   <<: *build_definition_dind
   tags:
     - aarch64
@@ -298,7 +307,7 @@ arm64v8 docker dind build:
         docker push ghcr.io/$DOCKER_REGISTRY_GHCR_REPO:${CI_COMMIT_TAG}-${ARCH2}-dind
       fi
 
-amd64 docker dind deploy:
+amd64_docker_dind_deploy:
   <<: *deploy_definition_dind
   tags:
     - amd64
@@ -307,9 +316,9 @@ amd64 docker dind deploy:
     ARCH2: x86_64
     PLATFORM: amd64
   needs:
-    - amd64 docker dind build
+    - amd64_docker_dind_build
 
-arm32v7 docker dind deploy:
+arm32v7_docker_dind_deploy:
   <<: *deploy_definition_dind
   tags:
     - armhf
@@ -318,9 +327,9 @@ arm32v7 docker dind deploy:
     ARCH2: arm32v7
     PLATFORM: arm/v7
   needs:
-    - arm32v7 docker dind build
+    - arm32v7_docker_dind_build
 
-arm64v8 docker dind deploy:
+arm64v8_docker_dind_deploy:
   <<: *deploy_definition_dind
   tags:
     - aarch64
@@ -329,15 +338,15 @@ arm64v8 docker dind deploy:
     ARCH2: arm64v8
     PLATFORM: arm64/v8
   needs:
-    - arm64v8 docker dind build
+    - arm64v8_docker_dind_build
 
-manifest creation dind latest:
+manifest_creation_dind_latest:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - amd64 docker dind deploy
-    - arm32v7 docker dind deploy
-    - arm64v8 docker dind deploy
+    - amd64_docker_dind_deploy
+    - arm32v7_docker_dind_deploy
+    - arm64v8_docker_dind_deploy
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -366,11 +375,11 @@ manifest creation dind latest:
         create_and_push_manifest $repo dind
       done
 
-manifest creation dind version:
+manifest_creation_dind_versioned:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - manifest creation dind latest
+    - manifest_creation_dind_latest
   rules:
     - if: $CI_COMMIT_TAG
   script:
