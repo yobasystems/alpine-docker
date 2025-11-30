@@ -27,6 +27,18 @@ container_scanning_aarch64:
   variables:
     CS_DOCKERFILE_PATH: "alpine-docker-aarch64/Dockerfile"
 
+sbom_amd64:
+  tags:
+    - amd64
+
+sbom_armhf:
+  tags:
+    - armhf
+
+sbom_aarch64:
+  tags:
+    - aarch64
+
 .build_template: &build_definition
   image: yobasystems/alpine-docker:dind
   stage: build
