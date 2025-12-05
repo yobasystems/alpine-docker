@@ -7,13 +7,13 @@
 [![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.23.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Docker Version](https://img.shields.io/badge/Docker%20version-v29.1.2-green.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 
-
 This Container image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yobasystems/alpine-docker/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Docker](https://www.docker.com/) pre-installed, or even better Docker-in-Docker (dind).
 
 ### Alpine Version 3.23.0 (Released 2025-12-03)
+
 ##### Docker Version 29.1.2
 
-----
+---
 
 ## Table of Contents
 
@@ -31,40 +31,40 @@ This Container image [(yobasystems/alpine-docker)](https://hub.docker.com/r/yoba
 - [Links](#links)
 - [Donation](#donation)
 
-
 ## 🏔️ What is Alpine Linux?
+
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
 
 ## 🐳 What is Docker in Docker?
+
 Although running Docker inside Docker is generally not recommended, there are some legitimate use cases, such as development of Docker itself.
 
 Docker is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating-system-level virtualisation on Linux, Mac OS and Windows.
 
-
 ## ✨ Features
 
-* Minimal size only, minimal layers
-* Memory usage is minimal on a simple install.
+- Minimal size only, minimal layers
+- Memory usage is minimal on a simple install.
 
 ## 🏗️ Architectures
 
-* ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
-* ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
-* ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
+- `:amd64`, `:x86_64` - 64 bit Intel/AMD (x86_64/amd64)
+- `:arm64v8`, `:aarch64` - 64 bit ARM (ARMv8/aarch64)
+- `:arm32v7`, `:armhf` - 32 bit ARM (ARMv7/armhf)
 
 #### 📝 PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## 🏷️ Tags
 
-* ```:latest``` latest branch based (Automatic Architecture Selection)
-* ```:main``` main branch usually inline with latest
-* ```:dind``` latest branch with docker-in-docker
-* ```:amd64```, ```:x86_64``` amd64 based on latest tag but amd64 architecture
-* ```:dind-amd64```, ```:dind-x86_64``` amd64 based on latest tag but amd64 architecture and includes docker-in-docker
-* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
-* ```:dind-armhf```, ```:dind-arm32v7``` Armv7 based on latest tag but arm architecture and includes docker-in-docker
-* ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
-* ```:dind-aarch64```, ```:dind-arm64v8``` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
+- `:latest` latest branch based (Automatic Architecture Selection)
+- `:main` main branch usually inline with latest
+- `:dind` latest branch with docker-in-docker
+- `:amd64`, `:x86_64` amd64 based on latest tag but amd64 architecture
+- `:dind-amd64`, `:dind-x86_64` amd64 based on latest tag but amd64 architecture and includes docker-in-docker
+- `:armhf`, `:arm32v7` Armv7 based on latest tag but arm architecture
+- `:dind-armhf`, `:dind-arm32v7` Armv7 based on latest tag but arm architecture and includes docker-in-docker
+- `:aarch64`, `:arm64v8` Armv8 based on latest tag but arm64 architecture
+- `:dind-aarch64`, `:dind-arm64v8` Armv8 based on latest tag but arm64 architecture and includes docker-in-docker
 
 ## 📏 Layers & Sizes
 
@@ -78,6 +78,7 @@ Docker is an open-source project that automates the deployment of applications i
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-docker/armhf.svg?style=for-the-badge)
 
 ## 🚀 How to use this image
+
 #### Usage
 
 Use like you would any other base image:
@@ -93,7 +94,6 @@ RUN apk add --no-cache ......
 ```
 
 or maybe a docker run command:
-
 
 ```
 docker run -it --name=dind --privileged -v /var/run/docker.sock:/var/run/docker.sock yobasystems/alpine-docker:dind /bin/sh
@@ -117,28 +117,25 @@ Simply create a docker-compose.yml file with the above content and run docker-co
 
 ## 🔍 Image contents & Vulnerability analysis
 
-| PACKAGE NAME          | PACKAGE VERSION | VULNERABILITIES |
-|-----------------------|-----------------|-----------------|
-
+| PACKAGE NAME | PACKAGE VERSION | VULNERABILITIES |
+| ------------ | --------------- | --------------- |
 
 ## 📚 Source Repositories
 
-* [Github - yobasystems/alpine-docker](https://github.com/yobasystems/alpine-docker)
-* [Gitlab - yobasystems/alpine-docker](https://gitlab.com/yobasystems/alpine-docker)
-
+- [Github - yobasystems/alpine-docker](https://github.com/yobasystems/alpine-docker)
+- [Gitlab - yobasystems/alpine-docker](https://gitlab.com/yobasystems/alpine-docker)
 
 ## 🐳 Container Registries
 
-* [Dockerhub - yobasystems/alpine-docker](https://hub.docker.com/r/yobasystems/alpine-docker/)
-* [Quay.io - yobasystems/alpine-docker](https://quay.io/repository/yobasystems/alpine-docker)
-* [GHCR - yobasystems/alpine-docker](https://ghcr.io/yobasystems/alpine-docker)
-
+- [Dockerhub - yobasystems/alpine-docker](https://hub.docker.com/r/yobasystems/alpine-docker/)
+- [Quay.io - yobasystems/alpine-docker](https://quay.io/repository/yobasystems/alpine-docker)
+- [GHCR - yobasystems/alpine-docker](https://ghcr.io/yobasystems/alpine-docker)
 
 ## 🔗 Links
 
-* [Yoba Systems](https://yoba.systems/)
-* [Github - Yoba Systems](https://github.com/yobasystems/)
-* [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
-* [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
-* [GHCR - Yoba Systems](https://ghcr.io/yobasystems)
-* [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
+- [Yoba Systems](https://yoba.systems/)
+- [Github - Yoba Systems](https://github.com/yobasystems/)
+- [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
+- [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
+- [GHCR - Yoba Systems](https://ghcr.io/yobasystems)
+- [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
